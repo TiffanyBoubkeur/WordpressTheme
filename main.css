@@ -1,0 +1,730 @@
+/*
+*** COULEURS ***
+https://colorhunt.co/palette/f6f6f6eae9e9d4d7dd420000
+blanc #F6F6F6;
+gris clair #EAE9E9; (bckg body)
+gris #D4D7DD;
+bordeaux #420000; 
+
+poussière : #949494;
+Calice : #A0A0A0;
+Alto : #D4D4D4;
+puits de mine : #383838;
+*/
+
+/*
+*** SOMMAIRE ***
+1 Base
+2 Generalités
+2 Header
+2.1 Header Nav Barre
+2.2 Heder bckgr
+2.2.1 Header 2nd section
+3 Main HOME
+3.1 Layout Images
+3.2 Avis diaporama 
+4 Pages internes
+4.1 Marquee  
+4.2 Prestations
+5 Page CONTACT
+6 Carousel 
+7 Page About
+7.1 Text 
+7.2 Bouton
+7.3 Image
+8 Footer (+ form contact)
+9 Responsive
+9.1 burger
+9.2 layout home
+9.3 presa pages internes
+9.4 about
+*/
+
+
+/* 
+    ***    BASE   ***
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+
+/* 
+    ***    GENERALITES   ***
+*/
+body{
+    font-size: 18px; 
+    font-family: 'Oswald', 'Open+Sans','Lato';
+    line-height: 1.6;
+    background-color: #EAE9E9;
+}
+
+h1{
+    text-transform: uppercase;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 5rem;
+    padding-bottom: 2rem;
+}
+
+h2{
+    font-size: 3rem;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: black;
+    text-decoration: underline;
+}
+
+ul{
+    list-style: none;
+}
+
+i.fas{
+    color: black;
+    font-size: 15px;
+}
+
+
+/* 
+    ***    HEADER   ***
+*/
+/* NAV BARRE */
+header section{
+    width: 100%;
+}
+
+header .nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+header section:first-child img.logo{
+    width: 5%,
+}
+
+header section:first-child input{
+    display: none;
+}
+
+header section:first-child #menu-mon-menu{
+    display: flex;
+    justify-content: flex-end;
+}
+
+header section:first-child .menu-item{
+    display: flex;
+    margin-right: 5rem;
+    font-size: 22px;
+}
+header section:first-child .menu-item a {
+    color: rgb(56,56,56,.8);
+}
+
+
+/* Background*/
+header{
+    background-image: linear-gradient(to top right, rgb(246, 246, 246,0.4), rgba(234, 233, 233,0.4)), url('./assets/images/bckgr2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    padding: 2rem;
+}
+
+header::after{
+    content: "";
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-color: #EAE9E9;
+    position: absolute;
+    left: 50%;
+    margin-left: -41px;
+    margin-top: -20px;
+    transform: rotate(45deg);
+}
+header#contact::after,
+header#about::after{
+    background-color: #D4D4D4;
+}
+
+/* 2nd SECTION HEADER HOME*/
+header section:last-child{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 10rem 0 9rem; /* 10rem HAUT / 0 GAUCHE DROITE / 15rem BAS*/
+}
+
+
+header section:last-child p{
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: 0.5px;
+}
+
+header section:last-child p::after,
+header section:last-child p::before{
+    content: '-';
+    padding: 0.5rem;
+}
+
+/*2nd SECTION HEADER AUTRES*/
+header#contact section:last-child,
+header#sites section:last-child,
+header#portfolio section:last-child,
+header#about section:last-child{
+    display: flex;
+    align-items: center;
+}
+
+/*
+*** MAIN - HOME***
+*/
+
+/* DIV layout images*/
+main section.presta{
+    display: flex;
+    align-items: center;    
+    flex-direction: column;
+    margin-top: 8rem;
+    padding: 2rem 0;
+    text-align: center;
+
+}
+
+main section.presta div{
+    display: flex;
+    width: 90%;
+}
+
+main section.presta div img{
+    transition: all .4s ease-in-out;
+
+}
+main section.presta .layoutImages img:hover,
+main section.presta .layoutImages1 img:hover{
+    transition: all .4s ease-in-out;
+    transform: scale(1.02);
+}
+
+main section.presta div.layoutImages{
+    height: 300px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    position: 0% 10%; 
+}
+
+
+main section.presta div.layoutImages img.img1{
+    height: 393px;
+    width: 800px;
+}
+
+
+main section.presta div.layoutImages1 img{
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+main section.presta div.layoutImages2 img{
+    height: 295px;
+    width : 800px;
+    margin-top: 10rem;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: 0% 90%;  
+}
+
+section.presta div h3,
+section.presta div p{
+    position: absolute;
+    margin-left: 2rem;
+}
+
+section.presta div h3{
+    margin-top : -23rem;
+}
+
+section.presta div p{
+    margin-top: -20rem;
+}
+
+.container div h3{
+    margin-top: 3rem;
+}
+
+.container div h3,
+.container  div p{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+/* Avis - Diaporama*/
+#carouselExample{
+    margin: 8rem;
+}
+
+/* #carouselExampleControls{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 120px;
+} */
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+#carouselExample{
+    width: 50%;
+    margin:0 auto;
+}
+
+#carouselExample div.carousel-item p,
+#carouselExample div.carousel-item i{
+    color: black;
+}
+
+
+/*
+***PAGES INTERNES***
+*/
+
+/*Marquee*/
+/* .picsMove{
+    margin-bottom: 100px;
+    display: flex;
+    width: auto;
+    height: 450px;
+    align-items: center;
+    margin-top: 35px;
+    /* overflow: hidden;
+    animation: reel2 70s linear infinite; 
+}
+    @keyframes reel2{
+        from{
+            transform: translateX(40%);
+        }
+        to{
+            transform: translateX(-40%);
+        }
+    } 
+.picsMove .pic{
+    background-position: center;
+    object-fit: cover;
+    width: 300px;
+    height:400px;
+    margin-left: 20px;
+    margin-right: 20px;
+    transition: all .4s ease-in-out;
+}
+.picsMove .pic:hover{
+    transition: all .4s ease-in-out;
+    transform: scale(1.12);
+} */
+
+
+/*PRESTATIONS*/
+section.siteChoices img{
+    height : 500px;
+    object-fit: cover;
+}
+
+div.list{
+    width: 1140px;
+    margin: -141px auto 0;
+}
+
+div.dimensionList{
+    display: grid;
+    grid-template-columns: calc(33.3333% - 20px) calc(33.3333% - 20px) calc(33.3333% - 20px);
+    grid-gap: 30px 30px;
+}
+
+div.positionList{
+    color: #111111;
+    background-color: #D4D7DD;
+    box-shadow: 1px 2px 20px #949494;
+}
+div.positionList:nth-of-type(2){
+    color : white;
+    background-color: #383838;
+}
+div.contentList{
+    padding: 70px 30px 30px;
+}
+div.contentList h6{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+div.contentList h3{
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin: 3rem 0;
+}
+
+/*
+***PAGE CONTACT***
+*/
+
+
+main#contact form{
+    margin-top: 7rem;
+}
+
+#contact form input,
+#contact form textarea,
+#contact form select{
+    color : #383838;
+}
+
+
+/*
+***PAGE ABOUT***
+*/
+.maDescription{
+    display: flex;
+    justify-content: space-evenly;
+    height: 100vh;
+    width: 100%;
+    flex-direction: row;
+    margin-top: 10rem;
+}
+.descriptionContent{
+    width: 40vh;
+
+}
+.descText{
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: black;
+}
+.descP{
+    font-size: 15px;
+    font-weight: lighter;
+    margin-bottom: 15px;
+}
+div.descP p{
+    font-family: 'Oswald';
+    font-weight: 400;
+    color: black;
+}
+
+.meContacter{
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 5px;
+    outline: none;
+    border:none;
+    margin-top: 40px;
+    width: 150px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    background: #383838;
+    color:#fff;
+}
+div.pages{
+    margin-left: 70rem;
+}
+.btn2{
+    background: #D4D7DD;
+}
+
+.meContacter span{
+    position: relative;
+    z-index: 2;
+    color:#fff;
+    transition : color 0.3s ease-in-out;
+    padding-left: 1.4rem;
+}
+
+.meContacter div.pages span{
+    padding-left: 2.4rem;
+}
+
+.meContacter::after{
+    content: "";
+    position: absolute;
+    background: #949494;    
+    width:100%;
+    height:100%;
+    top :0;
+    left:0;
+    transition : transform 0.3s ease-in-out;
+}
+.meContacter:hover::after{
+    transform : translateY(100%);
+} 
+.meContacter a:hover{
+    text-decoration: none;
+}
+
+.descHero{
+    width: 500px;
+    height: 600px;
+    background: url('./assets/images/Tiffany.JPG') no-repeat 50% 50%;
+    background-size: cover;
+    border-radius: 30% 30% 0 0;
+}
+
+/*
+    ***Galerie***
+*/
+
+figure img{
+    width: 100%;
+}
+
+/*
+    *** FOOTER ***
+*/
+footer{
+    background: linear-gradient(
+        to top right,
+        #949494,
+        20%,
+        #A0A0A0,
+        #D4D4D4
+    );
+    color: white;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    margin-top: 5rem;
+}
+
+footer h2{
+    color:white;
+}
+
+footer section.social-media a:hover{
+    text-decoration: none;
+}
+footer i .fab{
+    font-size: 28px;
+}
+
+footer .contact::before{
+    content:'';
+    display: block;
+    width: 1px;
+    height: 40px;
+    background-color: white;
+}
+
+footer .contact::before{
+    margin: 1rem 0 1rem 1.5rem;
+}
+
+footer .contact::after{
+    margin: 1rem 0 0 10.5rem;
+}
+
+footer .contact span{
+    display: block;
+    width: 40px;
+    height: 1px;
+    background-color: white;
+    margin: 0 2rem;
+}
+
+#footer .formulaire {
+    margin-left: 60rem;
+    margin-top : -16rem;
+}
+
+#footer input,
+#footer textarea,
+#contact form input,
+#contact form textarea,
+#contact form select{
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 30px;
+    background-color: rgba(255,255,255,.3);
+    color: black;
+}
+
+
+input::placeholder,
+form textarea::placeholder{
+    color: black;
+}
+
+#footer button,
+#contact button{
+    background-color: #383838;
+    color: white;
+    border:none;
+    border-radius: 40px;
+    padding: 1rem 2rem;
+    margin-top: -2.8rem;
+    position: relative;
+}
+
+
+footer small p{
+    color: white;
+}
+
+footer small::before{
+    content:"";
+    width: 50%;
+    height: 1px;
+    background-color: white;
+    display: block;
+    margin: 4rem 0 3rem;
+}
+
+/*
+ ***Politiques Conf***
+ */
+.politique{
+    margin:3rem 3rem 0 10rem;
+}
+
+
+/*
+***RESPONSIVE***
+*/
+@media screen and (max-width:767px){
+    
+    /* burger */
+    header section:first-child img{
+        width: 80%;
+    }
+
+    header section:first-child input{
+        display: block;
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        color: #383838;
+        font-size: 2rem;
+    }
+
+    header section:first-child .burger::before{
+        content:'\f0c9';
+    }
+
+    header section:first-child .burger:checked::before{
+        content:'\f00d';
+    }
+
+    header section:first-child .burger:checked+#menu-mon-menu{
+        display: block;
+    }
+    
+    header section:first-child #menu-mon-menu{
+        display: none;
+        width: 100%;
+        background-color: #383838;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin-top: 7rem;
+    }
+
+    header section:first-child .nav_menu{
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+    }
+
+    header section:first-child .menu-item{
+        padding: 1rem 0;
+    }
+    header section:first-child .menu-item a {
+        color: white;
+        margin-left: 1rem;
+    }
+    header::after{
+        margin-left: -45px;
+    }
+
+    /*Layout home*/
+    main section.presta div{
+        display: block;
+        width: 386px;
+    }
+    main section.presta div.layoutImages img.img1{
+        height: 300px;
+        width: 400px;
+    }
+    main section.presta div.layoutImages1 img{
+        height: 500px;
+        width: 400px;
+        object-fit: cover;
+    }
+    main section.presta div.layoutImages2 img{
+        margin-top: 50rem;
+    }
+
+    /*Liste presta pages internes*/
+    div.dimensionList{
+        display: block;
+        margin : 2rem;
+    } 
+
+    div.pages{
+        margin-left: 10rem;
+    }
+
+    /*Portfolio*/
+    section.galerie{
+        display: block;
+    }
+
+    section.galerie div{
+        width:100%;
+    }
+
+    /*About*/
+    section.maDescription{
+        display: block;
+    }
+
+    .descriptionContent{
+        margin-left: 1.5rem;
+    }
+
+    .descHero{
+        width: auto;
+        height: 400px;
+        margin-top: 1rem;
+        margin-bottom: 5rem;
+        object-fit: contain;
+    }
+    footer{
+        margin-top:10rem;
+    }
+    #about footer{
+        margin-top:31rem;
+    }
+    #footer .formulaire{
+        margin:0;
+    }
+}
